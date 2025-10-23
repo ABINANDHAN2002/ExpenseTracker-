@@ -1,7 +1,7 @@
-// Initial Data - empty by default
+
 let tableEntries = [];
 
-// Function to update summary
+
 function updateSummary() {
     let totalIncome = tableEntries.reduce((t, e) => e.type === 1 ? t + e.amount : t, 0);
     let totalExpense = tableEntries.reduce((ex, e) => e.type === 0 ? ex + e.amount : ex, 0);
@@ -11,13 +11,13 @@ function updateSummary() {
     updatedBal.innerText = (totalIncome - totalExpense) === 0 ? "" : (totalIncome - totalExpense);
 }
 
-// Function to add new entry
+
 function addItem() {
     let type = itemType.value;
     let name = document.getElementById("name");
     let amount = document.getElementById("amount");
 
-    // Input validation
+    
     if (name.value.trim() === "" || Number(amount.value) <= 0) {
         return alert("Incorrect Input");
     }
@@ -33,7 +33,7 @@ function addItem() {
     amount.value = 0;
 }
 
-// Function to render a single row
+
 function loadItems(e, i) {
     let cls;
     let table = document.getElementById("table");
@@ -62,12 +62,12 @@ function loadItems(e, i) {
     c3.style.color = cls;
 }
 
-// Clear table rows
+
 function remove() {
     while (table.rows.length > 1) table.deleteRow(-1);
 }
 
-// Delete entry
+
 function del(el) {
     remove();
     tableEntries = tableEntries.filter((e) => e.name !== el.name);
@@ -75,12 +75,12 @@ function del(el) {
     updateSummary();
 }
 
-// Update table
+
 function updateTable() {
     remove();
     tableEntries.forEach((e, i) => loadItems(e, i));
     updateSummary();
 }
 
-// Initial load
+
 updateTable();
