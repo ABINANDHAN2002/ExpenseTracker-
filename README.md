@@ -12,7 +12,10 @@ A simple and user-friendly **Expense Tracker** web application built using **HTM
 - Works entirely on the client-side (no backend required)  
 
 ---
+ Screenshot
+![Expense Tracker Screenshot](expense_tracker.png)
 
+---
  **Tech Stack**
 - HTML  
 - CSS  
